@@ -1,0 +1,37 @@
+header {
+    background-color: #1a1e21;
+}
+a {
+    text-decoration: none;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70%;
+    padding: 18px 0;
+}
+.container {
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+.logo span {
+    color: #fd8f44;
+}
+.support-me {
+    padding: 8px 12px;
+    font-size: 1.3rem;
+    background-color: #fd8f44;
+    border: none;
+    border-radius: 8px;
+}
+.support-me:hover {
+    cursor: pointer;
+    opacity: 90%;
+}

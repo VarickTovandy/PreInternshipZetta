@@ -1,0 +1,6 @@
+div {
+    display: flex;
+    align-items: center;
+    margin: 5% 10vw;
+    gap: 4em;
+}
