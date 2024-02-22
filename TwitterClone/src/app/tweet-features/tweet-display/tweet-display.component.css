@@ -1,0 +1,101 @@
+.tweet-container {
+    max-width: 50vw;
+    margin: 0 auto;
+    border: 1px solid #e6ecf0;
+}
+
+.post-profile-image img {
+    border-radius: 50%;
+    height: 50px;
+}
+
+.empty-feed {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.post {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid #e6ecf0;
+    padding-bottom: 10px;
+}
+
+.post-body img {
+    width: 450px;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    max-width: 90%;
+}
+
+.header-icon-section{
+    font-weight: 600;
+    font-size: 12px;
+    color: grey;
+    font-size: 1rem;
+}
+
+.post-badge {
+    font-size: 14px !important;
+    color: #50b7f5;
+    margin-right: 5px;
+
+}
+
+.post-header-text h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.post-header-discription {
+    margin-bottom: 10px;
+    margin-right: 20px;
+    font-size: 15px;
+}
+
+.post-body {
+    flex: 1;
+    padding: 10px;
+}
+
+.post-profile-image {
+    padding: 20px;
+}
+
+.material-icons {
+    display: flex;
+    align-items: center;
+    color: gray;
+    gap: 4px;
+}
+
+.post-icon {
+    font-size: 1.2em;
+}
+
+.post-icon:hover {
+    cursor: pointer;
+}
+
+.reply-icon:hover {
+    color: #50b7f5;
+}
+
+.retweet-icon:hover {
+    color: #19cf86
+}
+
+.like-icon:hover {
+    color: #ff5311;
+}
+
+.trash-icon:hover {
+    opacity: 70%;
+}

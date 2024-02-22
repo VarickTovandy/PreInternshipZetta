@@ -1,0 +1,41 @@
+<div class="tweet-container">
+    <app-tweet-form (tweetAdded)="onTweetAdded($event)"></app-tweet-form>
+
+    <div *ngIf="tweets.length === 0" class="empty-feed">
+        <p>Empty Feeds.</p>
+    </div>
+
+    <div *ngFor="let tweet of tweets" class="post">
+        <div class="post-profile-image">
+            <img src="assets/images/profile-pic.png" alt="neuro">
+        </div>
+
+        <div class="post-body">
+            <div class="post-header">
+                <div class="post-header-text">
+                    <h3>
+                        {{ name }}
+                        <span class="header-icon-section">
+                            &#64;{{ username }}
+                        </span>
+                    </h3>
+                </div>
+                <div class="post-header-discription">
+                    <p>{{ tweet.content }}</p>
+                </div>
+            </div>
+            <div class="post-footer">
+                <span class="material-icons reply-icon"><fa-icon [icon]="faMessage" class="post-icon"></fa-icon>{{ tweet.reply
+                    }}</span>
+                <span class="material-icons retweet-icon" [style.color]="tweet.retweet >= 1 ? '#50b7f5' : ''"><fa-icon
+                        [icon]="faRetweet" class="post-icon" (click)="incrementRetweetCount(tweet)"></fa-icon>{{
+                    tweet.retweet }}</span>
+                <span class="material-icons like-icon" [attr.style]="'color: ' + getLikeColor(tweet)"><fa-icon
+                        [icon]="getLikeIcon(tweet)" class="post-icon" (click)="manageLikeCount(tweet)"></fa-icon>
+                    {{ tweet.like }}</span>
+                <span class="material-icons trash-icon"><fa-icon [icon]="faTrashCan" class="post-icon"
+                        (click)="deleteTweet(tweet)"></fa-icon></span>
+            </div>
+        </div>
+    </div>
+</div>

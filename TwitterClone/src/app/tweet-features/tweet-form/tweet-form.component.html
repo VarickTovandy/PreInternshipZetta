@@ -1,0 +1,10 @@
+<h1 class="home-title">Home</h1>
+<div class="tweet-form-container">
+    <form (ngSubmit)="onSubmit()">
+        <div class="tweet-box">
+            <img src="assets/images/profile-pic.png" alt="profile imagw">
+            <textarea [(ngModel)]="tweetContent" name="tweetContent" placeholder="What is happening?!"></textarea>
+        </div>
+        <button type="submit" class="tweet-btn" [disabled]="!tweetContent" class="tweet-btn">Tweet</button>
+    </form>
+</div>
