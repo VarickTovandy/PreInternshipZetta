@@ -1,0 +1,6 @@
+<app-task-form (taskAdded)="onTaskAdded($event)"></app-task-form>
+<div class="flex-task">
+    <app-task-pending [pendingTasks]="newlyAddedTask" (taskOngoing)="onOngoingTaskAdded($event)"></app-task-pending>
+    <app-task-ongoing [ongoingTasks]="newlyAddedOngoingTask"></app-task-ongoing>
+    <app-task-done></app-task-done>
+</div>

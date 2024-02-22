@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+    box-sizing: border-box;
+}
+
+.flex-task {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.task-pending-container {
+    border: 1px solid lightgray;
+    padding: 10px 25px 15px 25px;
+    width: 400px;
+    border-radius: 15px;
+}
+.task-pending-header {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.task-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #e8ffd3;
+    margin-top: 10px;
+}
+.task-card .task-title {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.4rem;
+}
+.task-card .task-due {
+    color: gray
+}
+.task-mark {
+    background-color: #d1ffa3;
+    width: 8px;
+    height: 50px;
+    border-radius: 2px;
+}

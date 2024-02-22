@@ -1,0 +1,13 @@
+<div class="task-pending-container">
+    <h2 class="task-pending-header">Pending Tasks</h2>
+    <div *ngFor="let task of pendingTasks" class="pending-task">
+        <div class="task-card">
+            <div class="task-mark"></div>
+            <div>
+                <h2 class="task-title">{{task.title}}</h2>
+                <p class="task-due">{{task.dueDate}}</p>
+            </div>
+            <button (click)="onNext(task)">NEXT</button>
+        </div>
+    </div>
+</div>
