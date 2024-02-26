@@ -1,0 +1,26 @@
+<app-playlist-maker (playlistAdded)="onPlaylistAdded($event)"></app-playlist-maker>
+
+<div class="menu-bottom">
+    <div class="container playlist-container">
+        <h1 class="header">Your Library</h1>
+        <div *ngFor="let playlist of addedPlaylists" class="pending-task">
+            <div class="playlist-card">
+                <div class="playlist-info">
+                    <div class="dot"></div>
+                    <div>
+                        <h2 class="">{{playlist.name}}</h2>
+                        <p>Playlist . {{playlist.songCount}} songs</p>
+                    </div>
+                </div>
+                <div class="icon-container">
+                    <span class="material-icons"><fa-icon (click)="removePlaylist(playlist)" [icon]="faTrash" class="icon"></fa-icon></span>
+                    <span class="material-icons"><fa-icon (click)="toggleSongActive(playlist)" [icon]="faArrow" class="icon"></fa-icon></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div *ngIf="songActive">
+        <app-playlist-songs [songActive]="songActive" [currentPlaylist]="currentPlaylist"></app-playlist-songs>
+    </div>
+</div>

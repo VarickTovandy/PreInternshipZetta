@@ -1,0 +1,8 @@
+.songs-container-condition {
+    display: none;
+}
+
+.songs-container {
+    width: 50vw;
+    margin-left: 10px;
+}

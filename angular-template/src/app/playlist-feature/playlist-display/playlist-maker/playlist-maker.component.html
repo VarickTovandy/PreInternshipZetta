@@ -1,0 +1,15 @@
+<div class="playlist-maker container">
+    <div class="form-container">
+        <h1 class="header">Add Playlist</h1>
+        <div class="form-div">
+            <form (ngSubmit)="onSubmit()">
+                <div class="form-item text-input">
+                        <input #playlistNameInput type="text" name="playlist-name" id="name" [(ngModel)]="playlistName" placeholder="What do you want to add?">
+                    </div>
+                <div class="form-item">
+                    <button type="submit" [disabled]="!playlistName">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

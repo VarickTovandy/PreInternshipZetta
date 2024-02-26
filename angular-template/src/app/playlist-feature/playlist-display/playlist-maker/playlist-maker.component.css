@@ -1,0 +1,57 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    align-self: center;
+}
+
+.form-div {
+    align-self: center;
+}
+
+form {
+    display: flex;
+    gap: 20px;
+}
+
+.form-item input, button {
+    border: none;
+    border-radius: 30px;
+    padding: 10px 10px;
+    font-size: 1rem;
+}
+
+.text-input input {
+    width: 300px;
+    background: #535353;
+    padding-left: 20px;
+    color: #fff;
+}
+
+.text-input input:hover {
+    border: 3px solid #b3b3b3;
+    outline: none;
+}
+
+.text-input input:focus {
+    border: 3px solid #fff;
+    outline: none;
+    color: #fff;
+}
+
+.form-item button {
+    width: 100px;
+    background-color: #1db954;
+    color: white;
+}
+
+.form-item button:hover {
+    cursor: pointer;
+    opacity: 80%;
+}
+
+.form-item button:disabled {
+    opacity: 60%;
+}

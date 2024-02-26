@@ -1,0 +1,5 @@
+<div class="container songs-container" [class.songs-container-condition]="!isActive">
+    <div *ngFor="let playlist of currentPlaylist" class="post">
+        <h1>{{playlist.name}}</h1>
+    </div>
+</div>
