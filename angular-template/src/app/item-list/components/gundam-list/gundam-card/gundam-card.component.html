@@ -1,0 +1,13 @@
+<div class="card-container">
+    <h1 class="header">Our Products</h1>
+    <div class="list-container">
+        <div *ngFor="let gundam of gundams" class="item-card" (click)="saveGundamData(gundam)">
+            <div class="item-image">
+                <img [src]="gundam.image" alt="gundam image">
+            </div>
+            <div class="grade">{{ gundam.grade }}</div>
+            <p class="item-name">{{ gundam.name }}</p>
+            <p class="item-price">${{ gundam.price }}</p>
+        </div>
+    </div>
+</div>

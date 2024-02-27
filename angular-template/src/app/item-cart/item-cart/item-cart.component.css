@@ -1,0 +1,37 @@
+.cart-container {
+    border: 1px solid gray;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 25vw;
+}
+.cart-header {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.item-container {
+    padding: 5px 10px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.pay-container {
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.pay-btn {
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    background-color: #0198cd;
+    border-radius: 5px;
+    width: 100%;
+}

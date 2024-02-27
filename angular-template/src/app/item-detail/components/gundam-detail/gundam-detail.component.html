@@ -1,0 +1,26 @@
+<div class="detail-container" *ngIf="selectedGundam">
+    <button (click)="closeDetail()" class="back-btn">X</button>
+    <img [src]="selectedGundam.image" alt="gundam detail">
+    <div class="detail-header">
+        <h1>{{selectedGundam.name}}</h1>
+        <h1>${{selectedGundam.price}}</h1>
+        <button class="cart-btn" (click)="addToCart()">+ ADD TO CART</button>
+    </div>
+    <div class="detail-content">
+        <div class="item-info">
+            <h2>Brand</h2>
+            <p>{{selectedGundam.brand}}</p>
+        </div>
+        <div class="item-info">
+            <h2>Gundam Series</h2>
+            <p>{{selectedGundam.gundamSeries}}</p>
+        </div>
+        <div class="item-info">
+            <h2>Grade/Scale</h2>
+            <p>{{selectedGundam.grade}}</p>
+        </div>
+        <div class="item-description">
+            <p>{{selectedGundam.description}}</p>
+        </div>
+    </div>
+</div>

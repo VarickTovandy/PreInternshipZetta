@@ -1,0 +1,64 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.card-container {
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.header {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.list-container {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.item-image img {
+    width: 15vw;
+    height: auto;
+}
+
+.item-card {
+    padding: 7px 7px 30px 7px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    width: 15vw;
+}
+
+.item-card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.grade {
+    border: 1px solid red;
+    width: fit-content;
+    margin-top: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.item-name,
+.item-price {
+    font-size: 1rem;
+    line-height: 1.1rem;
+}
+
+.item-name {
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.item-price {
+    font-weight: 600;
+    margin-top: 7px;
+}

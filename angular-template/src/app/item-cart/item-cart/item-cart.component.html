@@ -1,0 +1,16 @@
+<div class="cart-container" *ngIf="cartItems.length>=1">
+    <div class="cart-header">
+        <h1>Shopping Cart</h1>
+    </div>
+    <div *ngFor="let item of cartItems" class="cart-item">
+        <div class="item-container">
+            <p>{{ item.name }}</p>
+            <p>Price: ${{ item.price }}</p>
+            <p>Quantity: {{ item.quantity }}</p>
+        </div>
+    </div>
+    <div class="pay-container">
+        <p>Total Price: ${{totalPrice}}</p>
+        <button class="pay-btn">PAY</button>
+    </div>
+</div>
