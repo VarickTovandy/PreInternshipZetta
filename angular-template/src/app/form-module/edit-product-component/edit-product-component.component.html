@@ -1,0 +1,69 @@
+<div class="edit-container" *ngIf="selectedFigure">
+    <div class="form-header">
+        <h1 *ngIf="!isEditing">Product Detail</h1>
+        <h1 *ngIf="isEditing">Editing Product</h1>
+        <div class="btn-container">
+            <button (click)="toggleEdit()" class="close-btn"><fa-icon [icon]="faPen"></fa-icon></button>
+            <button (click)="closeEdit()" class="close-btn"><fa-icon [icon]="faXmark"></fa-icon></button>
+        </div>
+    </div>
+    <div *ngIf="!isEditing" class="edit-card">
+        <div class="image-container">
+            <img [src]="selectedFigure.imgUrl" alt="big image">
+        </div>
+        <div class="header">
+            <h1>{{selectedFigure.name}}</h1>
+            <h2>By {{selectedFigure.manufacturer}}</h2>
+            <h2 class="price-detail">{{selectedFigure.price}}</h2>
+        </div>
+        <div class="product-information">
+            <p class="information">{{selectedFigure.description}}</p>
+            <div class="flex-information top-margin">
+                <p class="left-p">Character</p>
+                <div class="right-info">
+                    <p>{{selectedFigure.character}}</p>
+                </div>
+            </div>
+            <div class="flex-information sub-top-margin">
+                <p class="left-p">Category</p>
+                <div class="right-info">
+                    <p>{{selectedFigure.category}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="isEditing" class="edit-card">
+        <div class="input-field">
+            <label>Name</label>
+            <input type="text" [(ngModel)]="updatedName">
+        </div>
+        <div class="input-field">
+            <label>Price</label>
+            <input type="text" [(ngModel)]="selectedFigure.price">
+        </div>
+        <div class="input-field">
+            <label>Character</label>
+            <input type="text" [(ngModel)]="selectedFigure.character">
+        </div>
+        <div class="input-field">
+            <label>Manufacturer</label>
+            <input type="text" [(ngModel)]="selectedFigure.manufacturer">
+        </div>
+        <div class="input-field">
+            <label>Description</label>
+            <input type="text" [(ngModel)]="selectedFigure.description">
+        </div>
+        <div class="input-field">
+            <label>Category</label>
+            <input type="text" [(ngModel)]="selectedFigure.category">
+        </div>
+        <div class="input-field">
+            <label>Image Url</label>
+            <input type="text" [(ngModel)]="selectedFigure.imgUrl">
+        </div>
+    
+        <div class="btn-container">
+            <button (click)="editFigure()" class="button margin-btn">Edit Product</button>
+        </div>
+    </div>
+</div>

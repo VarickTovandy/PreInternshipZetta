@@ -1,0 +1,15 @@
+<div class="product-container">
+    <div *ngFor="let figure of figures" (click)="selectFigure(figure)" class="product-card">
+        <div class="card-layout">
+            <img [src]="figure.imgUrl" alt="figure art">
+            <div>
+                <h2>{{ figure.name }}</h2>
+                <p class="price-text">{{ figure.price }}</p>
+            </div>
+            <div class="icon-layout">
+                <button (click)="removeFigure(figure)" class="icon-btn"><fa-icon [icon]="faTrash"></fa-icon></button>
+                <!-- <button (click)="selectFigure(figure)" class="icon-btn"><fa-icon [icon]="faRight"></fa-icon></button> -->
+            </div>
+        </div>
+    </div>
+</div>

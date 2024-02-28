@@ -1,0 +1,17 @@
+<div *ngIf="addProductActive">
+    <app-add-product-component [addProductActive]="addProductActive"
+        (addProductActiveChange)="onCloseAddProduct($event)"></app-add-product-component>
+</div>
+
+<div class="component-layout">
+    <div class="list-container">
+        <div class="header-section form-header">
+            <h1>Welcome, Varick!</h1>
+            <button (click)="toggleAddProduct()" class="button">Add Product</button>
+        </div>
+        <app-product-component></app-product-component>
+    </div>
+    <div>
+        <app-edit-product-component></app-edit-product-component>
+    </div>
+</div>

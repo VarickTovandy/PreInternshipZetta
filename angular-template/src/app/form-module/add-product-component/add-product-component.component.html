@@ -1,0 +1,37 @@
+<div class="form-container">
+    <div class="form-header">
+        <h1>Add New Product</h1>
+        <button (click)="closeAddProduct()" class="close-btn"><fa-icon [icon]="faXmark"></fa-icon></button>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+        <div class="input-field">
+            <input type="text" id="name" name="name" [(ngModel)]="newFigure.name" required placeholder="Enter name">
+        </div>
+        <div class="input-field">
+            <input type="text" id="price" name="price" [(ngModel)]="newFigure.price" required placeholder="Enter price">
+        </div>
+        <div class="input-field">
+            <input type="text" id="character" name="character" [(ngModel)]="newFigure.character" required
+                placeholder="Enter character">
+        </div>
+        <div class="input-field">
+            <input type="text" id="manufacturer" name="manufacturer" [(ngModel)]="newFigure.manufacturer" required
+                placeholder="Enter manufacturer">
+        </div>
+        <div class="input-field">
+            <input type="text" id="category" name="category" [(ngModel)]="newFigure.category" required
+                placeholder="Enter category">
+        </div>
+        <div class="input-field">
+            <input type="text" id="description" name="description" [(ngModel)]="newFigure.description" required
+                placeholder="Enter description">
+        </div>
+        <div class="input-field">
+            <input type="text" id="image-url" name="image-url" [(ngModel)]="newFigure.imgUrl" required
+                placeholder="Enter image url">
+        </div>
+        <div class="btn-container">
+            <button type="submit" [disabled]="!isFormValid()" class="button top-margin">Add Product</button>
+        </div>
+    </form>
+</div>

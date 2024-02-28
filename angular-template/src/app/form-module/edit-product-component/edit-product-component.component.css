@@ -1,0 +1,91 @@
+.edit-container {
+    width: 40vw;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d3d3d3;
+    border-radius: 10px;
+}
+
+.form-header h1 {
+    color: #fc4c02;
+}
+
+.edit-card {
+    padding: 20px;
+    max-height: 75vh;
+    padding-right: 20px;
+    overflow-y: auto;
+    border-radius: 5px;
+    border: 2px solid #fc4c02;
+}
+
+.btn-container {
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+    align-items: center;
+}
+
+.margin-btn {
+    margin-top: 25px;
+}
+
+.image-container img {
+    height: 500px;
+    width: 100%;
+    border: 1px solid #fc4c02;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.header h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.product-information {
+    margin-top: 20px;
+}
+
+.information {
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.flex-information {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.left-p {
+    width: 100px;
+}
+
+.right-info {
+    padding: 5px 15px;
+    border-radius: 15px;
+    background-color: #ebeced;
+}
+
+.right-info p {
+    background-color: #ebeced;
+}
+
+.sub-top-margin {
+    margin-top: 10px;
+}
+
+.price-detail {
+    color: #fc4c02;
+}
