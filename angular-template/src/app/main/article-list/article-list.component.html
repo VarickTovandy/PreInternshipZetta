@@ -1,0 +1,16 @@
+<div class="main-container">
+    <app-add-article *ngIf="isAddArticleActice" [isAddArticleActice]="isAddArticleActice"
+        (addArticleActiveChange)="onCloseAddArticle($event)"></app-add-article>
+    <div class="flex container">
+        <div>
+            <h1>Welcome, Varick!</h1>
+            <h2>Let's create more amazing articles today.</h2>
+        </div>
+        <button (click)="toggleAddArticle()" class="button hover">Add Article</button>
+    </div>
+    <div class="articles container">
+        <div *ngFor="let article of articlesData">
+            <app-article-card [article]="article"></app-article-card>
+        </div>
+    </div>
+</div>

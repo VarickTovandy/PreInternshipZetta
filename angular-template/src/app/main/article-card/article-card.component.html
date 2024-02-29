@@ -1,0 +1,10 @@
+<div class="article-container" (click)="openArticleDetail(article.id)">
+    <img [src]=article.imgUrl class="article-img" alt="article-img">
+
+    <h2 class="category">{{article.genre}}</h2>
+    <span class="article-title">{{article.title}}</span>
+    <span class="article-date">{{article.createdAt}}</span>
+    <p class="article-description">{{article.description}}</p>
+    
+   <fa-icon [icon]="faTrash" (click)="removeArticle(article.id)" class="hover white-icon"></fa-icon>
+</div>

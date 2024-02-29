@@ -1,0 +1,26 @@
+<app-article-edit *ngIf="isEditActive" [isEditActice]="isEditActive" [currentArticle]="currentArticle"
+    (editArticleActiveChange)="onCloseEditArticle($event)"></app-article-edit>
+
+<div class="detail">
+    <div class="detail-container">
+        <div class="detail-header">
+            <div class="flex">
+                <button class="button hover" (click)="backToHome()">Back</button>
+                <button class="button hover" (click)="toggleEdit()">Edit Article</button>
+            </div>
+            <h1 class="header">{{currentArticle?.title}}</h1>
+            <img [src]=currentArticle?.imgUrl alt="heroImg" class="hero-img">
+        </div>
+        <div class="detail-content">
+            <div class="flex-text">
+                <p class="detail-information">Category:</p>
+                <p>{{currentArticle?.genre}}</p>
+            </div>
+            <div class="flex-text">
+                <p class="detail-information">Created At:</p>
+                <p>{{currentArticle?.createdAt}}</p>
+            </div>
+            <p class="detail-description">{{currentArticle?.description}}</p>
+        </div>
+    </div>
+</div>

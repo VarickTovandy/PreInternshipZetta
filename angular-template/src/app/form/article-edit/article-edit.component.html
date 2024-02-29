@@ -1,0 +1,35 @@
+<div class="popup-container">
+    <div class="form-container">
+        <div class="form-header flex">
+            <h1>Edit Article</h1>
+            <fa-icon [icon]="faXmark" (click)="closeEditArticle()" class="icon-btn hover"></fa-icon>
+        </div>
+        <div class="form-body">
+            <form (ngSubmit)="onEditArticle()">
+                <div class="input-field">
+                    <input type="text" id="title" name="title" [(ngModel)]="editArticle.title" required
+                        placeholder="Enter article title">
+                </div>
+                <div class="input-field">
+                    <input type="text" id="date" name="date" [value]="editArticle.createdAt" required
+                        placeholder="Enter article date">
+                </div>
+                <div class="input-field">
+                    <input type="text" id="genre" name="genre" [value]="editArticle.genre" required
+                        placeholder="Enter article genre">
+                </div>
+                <div class="input-field">
+                    <input type="text" id="description" name="description" [value]="editArticle.description" required
+                        placeholder="Enter article description">
+                </div>
+                <div class="input-field">
+                    <input type="text" id="imgUrl" name="imgUrl" [value]="editArticle.imgUrl" required
+                        placeholder="Enter article image url">
+                </div>
+                <div class="btn-container">
+                    <button type="submit" class="button top-margin hover">Edit Article</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
