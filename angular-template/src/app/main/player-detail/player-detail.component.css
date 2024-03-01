@@ -1,0 +1,21 @@
+.player-header {
+    gap: 20px;
+}
+
+.master-info {
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.player-info {
+    margin-top: 5px;
+}
+
+.bio {
+    margin-top: 30px;
+    font-weight: 400;
+}
+
+.bio-text {
+    margin-top: 10px;
+}

@@ -1,1 +1,129 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #262522;
+    --secondary-color: #739552;
+    --third-color: #343330;
+    --main-background-color: #302e2b;
+    --text-color: #fff;
+    --gm-color: #7c2929;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--main-background-color);
+    padding: 20px 5%;
+    color: var(--text-color);
+}
+
+hr {
+    margin: 20px 0;
+    opacity: 20%;
+}
+
+.container {
+    /* background: var(--primary-color); */
+    padding: 20px 50px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.justify-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header {
+    gap: 40px;
+}
+
+.icon {
+    font-size: 32px;
+}
+
+.button {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 7px 15px;
+    border: none;
+}
+
+.button:disabled {
+    opacity: 50%;
+}
+
+.card-container {
+    margin-top: 30px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    padding: 20px 30px;
+}
+
+.page-header {
+    padding: 0 50px;
+}
+
+.gap {
+    gap: 20px;
+}
+
+.card-img {
+    border-radius: 7px;
+    object-fit: cover;
+    width: 200px;
+    height: auto;
+}
+
+.title {
+    background-color: var(--gm-color);
+    padding: 0.2rem 0.3rem;
+    border-radius: 0.3rem;
+    font-size: 1.4rem;
+    margin-right: 10px;
+}
+
+.card-header {
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.sub-card-header {
+    font-weight: normal;
+    font-size: 1rem;
+    opacity: 50%;
+}
+
+.card-description {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.chess-elo {
+    color: #1b7fd5;
+    font-size: 1.4rem;
+}
+
+.form-button {
+    margin-top: 50px;
+    text-align: right;
+}
+
+.form-button button {
+    width: 100%;
+}
+
+.form-header {
+    padding: 0 11%;
+}

@@ -1,0 +1,72 @@
+<div class="flex header page-header">
+    <span class="icon"><fa-icon [icon]="faArrow" (click)="backToHome()"></fa-icon></span>
+    <h1>Player Details</h1>
+    <button (click)="openEditPlayer()" class="button">Edit Player</button>
+</div>
+
+<div class="container">
+    <div class="card-container">
+        <div class="flex header">
+            <img src="https://images.chesscomfiles.com/uploads/v1/master_player/3b0ddf4e-bd82-11e8-9421-af517c2ebfed.23bcb9e8.250x250o.fe16f88558e7.jpg"
+                alt="Detail Photo">
+            <div>
+                <div class="flex player-header">
+                    <h1 class="card-header"><span class="title">GM</span>{{playerData?.name}}</h1>
+                    <p class="chess-elo">{{playerData?.chessElo}}</p>
+                </div>
+                <div class="player-info">
+                    <p><span class="master-info">Full name</span>{{playerData?.name}}</p>
+                </div>
+                <div class="player-info">
+                    <p><span class="master-info">Age</span>{{playerData?.age}}</p>
+                </div>
+                <div class="player-info">
+                    <p><span class="master-info">Gender</span>{{playerData?.gender}}</p>
+                </div>
+                <div class="player-info">
+                    <p><span class="master-info">Federation</span>{{playerData?.nationality}}</p>
+                </div>
+                <div class="player-info">
+                    <p><span class="master-info">Email</span>{{playerData?.email}}</p>
+                </div>
+                <div class="player-info">
+                    <p><span class="master-info">Address</span>{{playerData?.playerAddress?.address}},
+                        {{playerData?.playerAddress?.city}}, {{playerData?.playerAddress?.country}},
+                        {{playerData?.playerAddress?.zipCode}}</p>
+                </div>
+            </div>
+        </div>
+        <h2 class="bio">Bio</h2>
+        <p class="bio-text">
+            To many, GM Magnus Carlsen is the best to ever play the game, although GMs Garry Kasparov and Bobby Fischer
+            remain in the conversation. At any rate, the clear and remarkable point is that before turning 30 years old,
+            Carlsen had already earned a spot at the top, and he has continued to dominate into his 30s.</p>
+
+        <p class="bio-text">
+            The 13-year-old Norwegian prodigy drew Kasparov and defeated GM Anatoly Karpov at the same event in 2004,
+            one month before he became the second-youngest GM in history (and still eighth-youngest as of 2021). In
+            2009, he became the youngest player to break the 2800-rating threshold (a record only broken by GM Alireza
+            Firouzja in 2021).
+        </p>
+
+        <p class="bio-text">
+            Then Carlsen transitioned from young world-class player to all-time great. He captured the world number-one
+            ranking in 2011 and still hasn’t let go of it as of May 2023. He won the world title in 2013 and has
+            successfully defended it four times (2014, 2016, 2018, and 2021). Additionally, he has won multiple world
+            titles in rapid and blitz time controls, achieved the highest rating ever, and racked up several elite
+            tournament wins, including four Norway Chess victories and seven in Wijk aan Zee.
+        </p>
+
+        <p class="bio-text">
+            The amazing part is it seems like there’s much more ahead for Carlsen. In October 2020 Carlsen's 125-game
+            undefeated streak came to an end (he scored 42 wins and 83 draws during this streak), setting yet another
+            world record. If he continues performing the way he has, Carlsen could create something truly legendary.
+        </p>
+
+        <p class="bio-text">
+            In an era of chess that’s more competitive than ever, he’s far ahead of the opposition. This despite
+            voluntarily relinquishing the world championship in 2023, the first player to do so since Fischer. Carlsen
+            further established his continued dominance by winning the 2023 Champions Chess Tour.
+        </p>
+    </div>
+</div>
