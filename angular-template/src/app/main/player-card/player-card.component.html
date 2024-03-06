@@ -1,13 +1,13 @@
-<div class="player-card" (click)="navigateToDetail(playerData.id)">
+<div class="player-card">
     <div class="flex gap">
-        <img src="https://images.chesscomfiles.com/uploads/v1/master_player/3b0ddf4e-bd82-11e8-9421-af517c2ebfed.23bcb9e8.160x160o.827f073930a6.jpg"
+        <img [src]=playerData.playerImg
             alt="chess-player" class="card-img">
         <div>
             <div class="flex justify-between">
-                <h1 class="card-header"><span class="title">GM</span>{{playerData.name}}</h1>
-                <div class="gap flex">
+                <h1 class="card-header hover" (click)="navigateToDetail(playerData.id)"><span class="title">GM</span>{{playerData.name}}</h1>
+                <div class="gap mobile-flex">
                     <p class="chess-elo">{{playerData.chessElo}}</p>
-                    <fa-icon [icon]="faTrash" (click)="removePlayer(playerData.id)" class="sub-icon"></fa-icon>
+                    <fa-icon [icon]="faTrash" (click)="removePlayer(playerData.id)" class="sub-icon hover"></fa-icon>
                 </div>
             </div>
             <h2 class="sub-card-header">{{playerData.nationality}}</h2>

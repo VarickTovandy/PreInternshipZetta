@@ -1,14 +1,15 @@
-<div class="flex header page-header">
-    <span class="icon"><fa-icon [icon]="faArrow" (click)="backToHome()"></fa-icon></span>
-    <h1>Player Details</h1>
-    <button (click)="openEditPlayer()" class="button">Edit Player</button>
-</div>
-
 <div class="container">
+    <div class="flex header">
+        <div class="mobile-flex header">
+            <span class="icon hover"><fa-icon [icon]="faArrow" (click)="backToHome()"></fa-icon></span>
+            <h1>Player Details</h1>
+        </div>
+        <button (click)="openEditPlayer()" class="button hover big-device-button">Edit Player</button>
+    </div>
     <div class="card-container">
         <div class="flex header">
-            <img src="https://images.chesscomfiles.com/uploads/v1/master_player/3b0ddf4e-bd82-11e8-9421-af517c2ebfed.23bcb9e8.250x250o.fe16f88558e7.jpg"
-                alt="Detail Photo">
+            <img [src]=playerData?.playerImg
+                alt="Detail Photo" class="player-photo">
             <div>
                 <div class="flex player-header">
                     <h1 class="card-header"><span class="title">GM</span>{{playerData?.name}}</h1>
@@ -29,18 +30,33 @@
                 <div class="player-info">
                     <p><span class="master-info">Email</span>{{playerData?.email}}</p>
                 </div>
-                <div class="player-info">
-                    <p><span class="master-info">Address</span>{{playerData?.playerAddress?.address}},
-                        {{playerData?.playerAddress?.city}}, {{playerData?.playerAddress?.country}},
-                        {{playerData?.playerAddress?.zipCode}}</p>
+            </div>
+        </div>
+
+        <div class="flex justify-between">
+            <div class="half-width">
+                <h2 class="bio">Address Info</h2>
+                <div *ngFor="let address of playerData?.playerAddresses">
+                    <div class="mobile-flex gap">
+                        <fa-icon [icon]="faCircle" class="circle-icon"></fa-icon>
+                        <p>{{ address.address }}, {{address.city}}, {{address.country}}, {{address.zipCode}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="half-width">
+                <h2 class="bio">Contact Info</h2>
+                <div *ngFor="let contact of playerData?.contactPerson">
+                    <div class="mobile-flex gap">
+                        <fa-icon [icon]="faCircle" class="circle-icon"></fa-icon>
+                        <p>{{ contact.name }}, {{contact.phoneNumber}}</p>
+                    </div>
                 </div>
             </div>
         </div>
+
         <h2 class="bio">Bio</h2>
         <p class="bio-text">
-            To many, GM Magnus Carlsen is the best to ever play the game, although GMs Garry Kasparov and Bobby Fischer
-            remain in the conversation. At any rate, the clear and remarkable point is that before turning 30 years old,
-            Carlsen had already earned a spot at the top, and he has continued to dominate into his 30s.</p>
+            Pecatur baik hati suka memberikan ratu secara gratis.</p>
 
         <p class="bio-text">
             The 13-year-old Norwegian prodigy drew Kasparov and defeated GM Anatoly Karpov at the same event in 2004,
@@ -69,4 +85,5 @@
             further established his continued dominance by winning the 2023 Champions Chess Tour.
         </p>
     </div>
+    <button (click)="openEditPlayer()" class="button hover small-device-button">Edit Player</button>
 </div>

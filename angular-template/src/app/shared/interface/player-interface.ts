@@ -5,12 +5,17 @@ export interface Player {
     gender: string,
     email: string,
     nationality: string,
+    playerImg?: string,
     chessTitle: string,
     chessElo: number,
-    playerAddress: {
+    playerAddresses: {
         address: string,
         zipCode: number,
         city: string,
         country: string
-    }
+    }[],
+    contactPerson: {
+        name: string,
+        phoneNumber: string
+    }[]
 }

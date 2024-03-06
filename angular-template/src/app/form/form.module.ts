@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from "@angular/forms";
 import { PlayerFormComponent } from './player-form/player-form.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -13,7 +14,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    RouterModule.forChild([
+      { path: '', component: PlayerFormComponent }
+    ])
   ],
   exports: [
     PlayerFormComponent

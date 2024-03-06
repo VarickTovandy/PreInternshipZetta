@@ -15,17 +15,21 @@ export class PlayerCardComponent {
     id: 0,
     name: '',
     age: 0,
-    gender:'',
+    gender: '',
     email: '',
     nationality: '',
     chessTitle: '',
     chessElo: 0,
-    playerAddress: {
+    playerAddresses: [{
       address: '',
       zipCode: 0,
       city: '',
       country: ''
-  }
+    }],
+    contactPerson: [{
+      name: '',
+      phoneNumber: ''
+    }]
   };
 
   constructor(private router: Router, private playerService: PlayerService) { }

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Player } from '../../shared/interface/player-interface';
 import { PlayerService } from '../../shared/service/player.service';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-player-detail',
@@ -11,6 +12,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 })
 export class PlayerDetailComponent {
   faArrow = faArrowLeft;
+  faCircle = faCircle;
   playerId: number = 0;
   playerData: Player | null = {
     id: 0,
@@ -21,12 +23,16 @@ export class PlayerDetailComponent {
     nationality: '',
     chessTitle: '',
     chessElo: 0,
-    playerAddress: {
+    playerAddresses: [{
       address: '',
       zipCode: 0,
       city: '',
       country: ''
-    }
+    }],
+    contactPerson: [{
+      name: '',
+      phoneNumber: ''
+    }]
   }
 
   constructor(private router: Router, private route: ActivatedRoute, private playerService: PlayerService) { }
@@ -39,9 +45,9 @@ export class PlayerDetailComponent {
       this.playerService.getPlayerById(this.playerId);
     }
     this.playerService.player$.subscribe((data: Player | null) => {
-      console.log(data)
-      if(data) {
+      if (data) {
         this.playerData = data;
+        console.log(data)
       }
     });
   }

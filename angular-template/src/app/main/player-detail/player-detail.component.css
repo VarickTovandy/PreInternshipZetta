@@ -19,3 +19,22 @@
 .bio-text {
     margin-top: 10px;
 }
+
+.big-device-button {
+    display: none;
+}
+
+.small-device-button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+    .big-device-button {
+        display: block;
+    }
+    .small-device-button {
+        display: none;
+    }
+}

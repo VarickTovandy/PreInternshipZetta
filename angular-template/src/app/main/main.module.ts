@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { PlayerListComponent } from './player-list/player-list.component';
 import { PlayerCardComponent } from './player-card/player-card.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
@@ -15,7 +16,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   imports: [
     CommonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
   exports: [
     PlayerListComponent,

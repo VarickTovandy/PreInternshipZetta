@@ -1,5 +1,5 @@
-<div class="flex header form-header">
-    <span class="icon"><fa-icon [icon]="faArrow" (click)="backToHome()"></fa-icon></span>
+<div class="mobile-flex header form-header">
+    <span class="icon hover"><fa-icon [icon]="faArrow" (click)="backToHome()"></fa-icon></span>
     <h1 *ngIf="!playerId">Add New Player</h1>
     <h1 *ngIf="playerId">Edit Player</h1>
 </div>
@@ -10,11 +10,17 @@
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" formControlName="name" placeholder="Enter name">
+                <div *ngIf="playerForm.get('name')?.touched && playerForm.get('name')?.hasError('required')">
+                    Player name is required
+                </div>
             </div>
 
             <div class="form-group">
                 <label for="age">Age:</label>
                 <input type="number" id="age" formControlName="age" placeholder="Enter age">
+                <div *ngIf="playerForm.get('age')?.touched && playerForm.get('age')?.hasError('required')">
+                    Please enter a valid age
+                </div>
             </div>
 
             <div class="form-group">
@@ -29,40 +35,117 @@
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" formControlName="email" placeholder="Enter email">
-                
+                <div *ngIf="playerForm.get('email')?.touched && playerForm.get('email')?.hasError('required')">
+                    Email is required
+                </div>
+                <div *ngIf="playerForm.get('email')?.touched && playerForm.get('email')?.hasError('email')">
+                    Please enter a valid email address
+                </div>
             </div>
 
             <div class="form-group">
                 <label for="nationality">Nationality:</label>
                 <input type="text" id="nationality" formControlName="nationality" placeholder="Enter nationality">
+                <div *ngIf="playerForm.get('nationality')?.touched && playerForm.get('nationality')?.hasError('required')">
+                    Nationality is required
+                </div>
             </div>
 
             <div class="form-group">
                 <label for="chessTitle">Chess Title:</label>
                 <input type="text" id="chessTitle" formControlName="chessTitle" placeholder="Enter chess title">
+                <div *ngIf="playerForm.get('chessTitle')?.touched && playerForm.get('chessTitle')?.hasError('required')">
+                    Chess title is required
+                </div>
             </div>
 
             <div class="form-group">
                 <label for="chessElo">Chess Elo:</label>
                 <input type="number" id="chessElo" formControlName="chessElo" placeholder="Enter chess Elo">
+                <div *ngIf="playerForm.get('chessElo')?.touched && playerForm.get('chessElo')?.hasError('required')">
+                    Please enter a valid elo number
+                </div>
+                <div *ngIf="playerForm.get('chessElo')?.touched && playerForm.get('chessElo')?.hasError('min')">
+                    Player's elo must be above 2000
+                </div>
             </div>
-
-            <div class="form-group" formGroupName="playerAddress">
-                <label for="address">Address:</label>
-                <input type="text" id="address" formControlName="address" placeholder="Enter address">
-
-                <label for="zipCode">Zip Code:</label>
-                <input type="text" id="zipCode" formControlName="zipCode" placeholder="Enter zip code">
-
-                <label for="city">City:</label>
-                <input type="text" id="city" formControlName="city" placeholder="Enter city">
-
-                <label for="country">Country:</label>
-                <input type="text" id="country" formControlName="country" placeholder="Enter country">
+            <hr>
+            <div formArrayName="playerAddresses">
+                <ng-container *ngFor="let address of Addresses.controls; let index = index">
+                    <div [formGroupName] = "index">
+                        <div class="address-container">
+                            <div class="flex header">
+                                <h2>Address No {{index+1}}</h2>
+                                <button (click)="removeAddress(index)" [disabled]="Addresses.controls.length === 1" class="button delete-button hover mobile-remove-button">Remove Address</button>
+                            </div>
+                            <div class="form-group">
+                                <label for="Address">Address</label>
+                                <input type="text" id="Address" formControlName="address" placeholder="Enter Player's Address {{index + 1}}">
+                                <div *ngIf="address.get('address')?.touched && address.get('address')?.hasError('required')">
+                                    Address is required
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City:</label>
+                                <input type="text" id="city" formControlName="city" placeholder="Enter City">
+                                <div *ngIf="address.get('city')?.touched && address.get('city')?.hasError('required')">
+                                    City is required
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country:</label>
+                                <input type="text" id="country" formControlName="country" placeholder="Enter Country">
+                                <div *ngIf="address.get('country')?.touched && address.get('country')?.hasError('required')">
+                                    Country is required
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="zipCode">Zip Code:</label>
+                                <input type="number" id="zipCode" formControlName="zipCode" placeholder="Enter Zip Code">
+                                <div *ngIf="address.get('zipCode')?.touched && address.get('zipCode')?.hasError('required')">
+                                    Zip code is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+                <div class="align-right">
+                    <button type="button" (click)="addNewAddress()" class="button sub-form-button hover">Add Address</button>
+                </div>
+            </div>
+            <hr>
+            <div formArrayName="contactPerson">
+                <ng-container *ngFor="let person of Contacts.controls; let index = index">
+                    <div [formGroupName] = "index">
+                        <div class="address-container">
+                            <div class="flex header">
+                                <h2>Contact Person No {{index+1}}</h2>
+                                <button (click)="removeContact(index)" [disabled]="Contacts.controls.length === 1" class="button delete-button hover mobile-remove-button">Remove Contact</button>
+                            </div>
+                            <div class="form-group">
+                                <label for="conatctName">Name:</label>
+                                <input type="text" id="contactName" formControlName="name" placeholder="Enter Person's Name">
+                                <div *ngIf="person.get('address')?.touched && person.get('address')?.hasError('required')">
+                                    Contact name is required
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number:</label>
+                                <input type="text" id="phoneNumber" formControlName="phoneNumber" placeholder="Enter Person's Phone Number">
+                                <div *ngIf="person.get('phoneNumber')?.touched && person.get('phoneNumber')?.hasError('required')">
+                                    Phone number is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+                <div class="align-right">
+                    <button type="button" (click)="addNewContact()" class="button sub-form-button hover">Add Contact</button>
+                </div>
             </div>
 
             <div class="form-button">
-                <button type="submit" [disabled]="playerForm.invalid" class="button ">Submit</button>
+                <button type="submit" [disabled]="playerForm.invalid" class="button hover">Submit</button>
             </div>
         </form>
     </div>

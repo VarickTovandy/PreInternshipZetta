@@ -28,22 +28,27 @@ hr {
 
 .container {
     /* background: var(--primary-color); */
-    padding: 20px 50px;
+    padding: 20px 0;
 }
 
-.flex {
+.mobile-flex {
     display: flex;
     align-items: center;
 }
 
+.flex {
+    display: block;
+    align-items: center;
+}
+
 .justify-between {
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: space-between;
 }
 
 .header {
-    gap: 40px;
+    gap: 20px;
 }
 
 .icon {
@@ -54,9 +59,9 @@ hr {
     background-color: var(--secondary-color);
     color: var(--text-color);
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     border-radius: 5px;
-    padding: 7px 15px;
+    padding: 5px 10px;
     border: none;
 }
 
@@ -64,11 +69,16 @@ hr {
     opacity: 50%;
 }
 
+.button:disabled:hover {
+    cursor: default;
+    opacity: 50%;
+}
+
 .card-container {
     margin-top: 30px;
     border-radius: 5px;
     background-color: var(--primary-color);
-    padding: 20px 30px;
+    padding: 10px 20px;
 }
 
 .page-header {
@@ -79,11 +89,19 @@ hr {
     gap: 20px;
 }
 
+.half-width {
+    width: 100%;
+}
+
+.circle-icon {
+    font-size: 8px;
+}
+
 .card-img {
     border-radius: 7px;
     object-fit: cover;
-    width: 200px;
-    height: auto;
+    width: 100%;
+    height: 200px;
 }
 
 .title {
@@ -94,9 +112,27 @@ hr {
     margin-right: 10px;
 }
 
+.sub-form-button {
+    margin: 15px 0;
+}
+
+.hover:hover {
+    cursor: pointer;
+    opacity: 80%;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.form-button {
+    text-align: right;
+    margin-top: 5px;
+}
+
 .card-header {
     font-weight: 600;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
 }
 
 .sub-card-header {
@@ -106,7 +142,7 @@ hr {
 }
 
 .card-description {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: normal;
 }
 
@@ -125,5 +161,52 @@ hr {
 }
 
 .form-header {
-    padding: 0 11%;
+    padding: 0;
+}
+
+.player-photo {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+@media screen and (min-width: 800px) {
+    .card-header {
+        font-size: 1.8rem;
+    }
+    .flex {
+        display: flex;
+    }
+    .container {
+        padding: 20px 50px;
+    }
+    .justify-between {
+        display: flex;
+    }
+    .form-header {
+        padding: 0 11%;
+    }
+    .card-container {
+        padding: 20px 30px;
+    }
+    .half-width {
+        width: 50%;
+    }
+    .button {
+        font-size: 18px;
+        padding: 7px 15px;
+    }
+    .header {
+        gap: 20px;
+    }
+    .card-img {
+        width: 200px;
+    }
+    .card-description {
+        font-size: 1rem;
+    }
+    .player-photo {
+        width: 250px;
+        height: 250px;
+    }
 }

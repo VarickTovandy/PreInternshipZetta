@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { players } from '../player-data';
 import { Player } from '../interface/player-interface';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +14,13 @@ export class PlayerService {
   player: BehaviorSubject<Player | null> = new BehaviorSubject<Player | null>(null);
   player$ = this.player.asObservable();
 
-  constructor() { }
+  constructor(privaterouter: Router) { }
 
   addPlayer(newPlayer: Player): void {
     const currentPlayers = [...this.players.value];
     currentPlayers.unshift(newPlayer);
     this.players.next(currentPlayers);
+    console.log(this.players.value)
   }
 
   updatePlayer(updatedPlayer: Player): void {
@@ -32,7 +34,6 @@ export class PlayerService {
   }
 
   getPlayerById(id: number): void {
-
     const player = this.players.value.find(player => player.id === id);
     console.log(this.players.value)
     if (player) {
