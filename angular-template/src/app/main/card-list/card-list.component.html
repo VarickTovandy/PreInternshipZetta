@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="flex header">
+        <h1>Laptop Shop</h1>
+        <button (click)="openAddLaptop()" class="button hover">Add New Laptop</button>
+    </div>
+    <div class="grid-container">
+        <div *ngFor="let laptop of laptopsData">
+            <app-card-info [laptopData]="laptop"></app-card-info>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+.delete-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--primary-color);
+}

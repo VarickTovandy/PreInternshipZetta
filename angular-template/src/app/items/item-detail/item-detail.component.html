@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="header flex">
+        <button class="button hover" (click)="backToHome()">Back</button>
+        <h1>{{laptopData.name}}</h1>
+        <button (click)="openEditLaptop()" class="button hover">Edit Laptop Data</button>
+    </div>
+    <div class="detail-container">
+        <img [src]="laptopData.laptopImg" alt="{{ laptopData.name }}">
+        <div>
+            <p>Brand: {{ laptopData.brand }}</p>
+            <p>Processor: {{ laptopData.processor }}</p>
+            <p>GPU: {{ laptopData.gpu }}</p>
+            <p>Storage: {{ laptopData.storage }}</p>
+            <p>RAM: {{ laptopData.ram }}</p>
+            <p>Price: ${{ laptopData.price }}</p>
+            <div *ngFor="let warranty of laptopData.warranty; let i = index">
+                <hr>
+                <p>Warranty-{{ i + 1 }}</p>
+                <p>Warranty Type: {{ warranty.type }}</p>
+                <p>Warranty Duration: {{ warranty.duration }}</p>
+            </div>            
+        </div>
+    </div>
+</div>

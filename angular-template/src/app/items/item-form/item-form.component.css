@@ -1,0 +1,53 @@
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+form{
+    margin-top: 20px;
+}
+
+.form-field {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    font-weight: bold;
+    display: block;
+}
+
+.form-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.invalid-input {
+    border-color: red;
+}
+
+.warranty-btn {
+    margin-top: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 25px;
+}
+
+.warranty-btn:disabled {
+    opacity: 50%;
+    cursor: default;
+}
+
+.submit-btn {
+    width: 100%;
+}
