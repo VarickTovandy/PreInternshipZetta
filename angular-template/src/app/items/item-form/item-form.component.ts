@@ -48,8 +48,8 @@ export class ItemFormComponent implements OnInit {
       processor: new FormControl('', [Validators.required]),
       price: new FormControl(0, [Validators.required]),
       gpu: new FormControl('', [Validators.required]),
-      storage: new FormControl('', [Validators.required]),
-      ram: new FormControl('', [Validators.required]),
+      storage: new FormControl('', [Validators.required, this.noSymbolsValidator]),
+      ram: new FormControl('', [Validators.required, this.noSymbolsValidator]),
       laptopImg: new FormControl('', [Validators.required]),
       warranty: this.fb.array([]),
     });
@@ -78,6 +78,12 @@ export class ItemFormComponent implements OnInit {
         })
       }
     });
+  }
+
+  noSymbolsValidator(control: any) {
+    const value = control.value;
+    const hasSymbols = /[!@#$%^&*(),.?":{}|<>]/.test(value);
+    return hasSymbols ? { 'containsSymbols': true } : null;
   }
 
   handleFormChanges() {

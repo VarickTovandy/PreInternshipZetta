@@ -46,15 +46,15 @@ body {
 }
 
 .card-container {
-    margin-top: 20px;
     padding: 10px;
+    min-height: 350px;
     background: var(--secondary-color);
     border-radius: 10px;
 }
 
 .card-container img {
     height: 200px;
-    width: 300px;
+    width: 100%;
     object-fit: cover;
 }
 
@@ -67,6 +67,10 @@ body {
 .justify-end {
     justify-content: end;
     gap: 10px;
+}
+
+.justify-between {
+    justify-content: space-between;
 }
 
 .detail-container {
@@ -88,6 +92,13 @@ body {
 .detail-container p {
     font-weight: 500;
     font-size: 18px;
+}
+
+.search-bar {
+    width: 250px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
 }
 
 hr {

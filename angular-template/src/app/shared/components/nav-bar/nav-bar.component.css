@@ -1,0 +1,36 @@
+.navbar {
+    height: 50px;
+    margin-bottom: 40px;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.select-lang {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: #fff;
+    outline: none;
+    border: none;
+}
+
+.select-lang::after {
+    content: "\25BC";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.select-lang option {
+    background-color: #fff;
+    color: #333;
+}
+
+.select-lang option:hover {
+    background-color: #f0f0f0;
+}

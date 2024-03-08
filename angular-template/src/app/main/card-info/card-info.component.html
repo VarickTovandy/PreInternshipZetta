@@ -1,6 +1,6 @@
 <div class="card-container">
     <img [src]="laptopData.laptopImg" alt="{{ laptopData.name }}">
-    <h2 class="hover" (click)="openLaptopDetail(laptopData.id)">{{ laptopData.name }}</h2>
-    <p>Price: ${{ laptopData.price }}</p>
-    <button class="delete-button hover" (click)="removeLaptop(laptopData.id)">Remove Laptop</button>
+    <h2 class="hover" (click)="openLaptopDetail(laptopData.id)">{{ laptopData.name | titlecase }}</h2>
+    <p>{{ 'Price' | translate }}: {{ laptopData.price | currency }}</p>
+    <button class="delete-button hover" (click)="removeLaptop(laptopData.id)">{{ 'Remove Laptop' | translate }}</button>
 </div>

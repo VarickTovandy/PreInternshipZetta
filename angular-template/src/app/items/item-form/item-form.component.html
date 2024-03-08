@@ -1,127 +1,135 @@
+<app-nav-bar></app-nav-bar>
+
 <div class="container">
     <div class="form-container">
         <div class="flex header">
-            <button class="button hover" (click)="backToHome()">Back</button>
-            <h1 *ngIf="laptopId === ''">Add New Laptop</h1>
-            <h1 *ngIf="laptopId !== ''">Edit Existing Laptop</h1>
+            <button class="button hover" (click)="backToHome()">{{ 'Back' | translate }}</button>
+            <h1 *ngIf="laptopId === ''">{{ 'Add New Laptop' | translate }}</h1>
+            <h1 *ngIf="laptopId !== ''">{{ 'Edit Laptop Data' | translate }}</h1>
         </div>
         <form [formGroup]="laptopForm">
             <div class="form-field">
-                <label for="name" class="form-label">Name:</label>
+                <label for="name" class="form-label">{{ 'Name' | translate }}:</label>
                 <input type="text" id="name" formControlName="name" class="form-input"
                     [ngClass]="{ 'invalid-input': laptopForm.get('name')?.invalid && laptopForm.get('name')?.touched }"
                     required>
                 <div *ngIf="laptopForm.get('name')?.invalid && laptopForm.get('name')?.touched" class="error-message">
-                    Name is required
+                    {{ 'Name is required' | translate }}
                 </div>
             </div>
 
             <div class="form-field">
-                <label for="brand" class="form-label">Brand:</label>
+                <label for="brand" class="form-label">{{ 'Brand' | translate }}</label>
                 <input type="text" id="brand" formControlName="brand" class="form-input"
                     [ngClass]="{ 'invalid-input': laptopForm.get('brand')?.invalid && laptopForm.get('brand')?.touched }"
                     required>
                 <div *ngIf="laptopForm.get('brand')?.invalid && laptopForm.get('brand')?.touched" class="error-message">
-                    Brand is required
+                    {{ 'Brand is required' | translate }}
                 </div>
             </div>
 
             <div class="form-field">
-                <label for="price" class="form-label">Price:</label>
+                <label for="price" class="form-label">{{ 'Price' | translate }}:</label>
                 <input type="number" id="price" formControlName="price" class="form-input"
                     [ngClass]="{ 'invalid-input': laptopForm.get('price')?.invalid && laptopForm.get('price')?.touched }"
                     required>
                 <div *ngIf="laptopForm.get('price')?.invalid && laptopForm.get('price')?.touched" class="error-message">
-                    Price is required
+                    {{ 'Price is required' | translate }}
                 </div>
             </div>
 
             <div class="form-field">
-                <label for="processor" class="form-label">Processor:</label>
+                <label for="processor" class="form-label">{{ 'Processor' | translate }}:</label>
                 <input type="text" id="processor" formControlName="processor" class="form-input"
                     [ngClass]="{ 'invalid-input': laptopForm.get('processor')?.invalid && laptopForm.get('processor')?.touched }"
                     required>
                 <div *ngIf="laptopForm.get('processor')?.invalid && laptopForm.get('processor')?.touched"
                     class="error-message">
-                    Processor is required
+                    {{ 'Processor is required' | translate }}
                 </div>
             </div>
 
             <div class="form-field">
-                <label for="gpu" class="form-label">GPU:</label>
+                <label for="gpu" class="form-label">{{ 'GPU' | translate }}:</label>
                 <input type="text" id="gpu" formControlName="gpu" class="form-input"
                     [ngClass]="{ 'invalid-input': laptopForm.get('gpu')?.invalid && laptopForm.get('gpu')?.touched }"
                     required>
                 <div *ngIf="laptopForm.get('gpu')?.invalid && laptopForm.get('gpu')?.touched" class="error-message">
-                    GPU is required
+                    {{ 'GPU is required' | translate }}
                 </div>
             </div>
 
             <div class="form-field">
-                <label for="storage" class="form-label">Storage:</label>
+                <label for="storage" class="form-label">{{ 'Storage' | translate }}:</label>
                 <input type="text" id="storage" formControlName="storage" class="form-input"
                     [ngClass]="{ 'invalid-input': laptopForm.get('storage')?.invalid && laptopForm.get('storage')?.touched }"
                     required>
-                <div *ngIf="laptopForm.get('storage')?.invalid && laptopForm.get('storage')?.touched"
+                <div *ngIf="laptopForm.get('storage')?.errors?.['required'] && laptopForm.get('storage')?.touched"
                     class="error-message">
-                    Storage is required
+                    {{ 'Storage is required' | translate }}
+                </div>
+                <div *ngIf="laptopForm.get('storage')?.hasError('containsSymbols') && laptopForm.get('ram')?.touched" class="error-message">
+                    {{ 'Storage size cannot contain special characters' | translate }}
                 </div>
             </div>
 
             <div class="form-field">
-                <label for="ram" class="form-label">RAM:</label>
+                <label for="ram" class="form-label">{{ 'RAM' | translate }}:</label>
                 <input type="text" id="ram" formControlName="ram" class="form-input"
                     [ngClass]="{ 'invalid-input': laptopForm.get('ram')?.invalid && laptopForm.get('ram')?.touched }"
                     required>
-                <div *ngIf="laptopForm.get('ram')?.invalid && laptopForm.get('ram')?.touched" class="error-message">
-                    RAM is required
+                <div *ngIf="laptopForm.get('ram')?.errors?.['required'] && laptopForm.get('ram')?.touched" class="error-message">
+                    {{ 'RAM is required' | translate }}
+                </div>
+                <div *ngIf="laptopForm.get('ram')?.hasError('containsSymbols') && laptopForm.get('ram')?.touched" class="error-message">
+                    {{ 'RAM size cannot contain special characters' | translate }}
                 </div>
             </div>
 
             <div class="form-field">
-                <label for="laptopImg" class="form-label">Laptop Image:</label>
+                <label for="laptopImg" class="form-label">{{ 'Laptop image link' | translate }}:</label>
                 <input type="text" id="laptopImg" formControlName="laptopImg" class="form-input"
                     [ngClass]="{ 'invalid-input': laptopForm.get('laptopImg')?.invalid && laptopForm.get('laptopImg')?.touched }"
                     required>
                 <div *ngIf="laptopForm.get('laptopImg')?.errors?.['required'] && laptopForm.get('laptopImg')?.touched"
                     class="error-message">
-                    Laptop image link is required
+                    {{ 'Laptop image link is required' | translate }}
                </div>
                 <div *ngIf="
                       laptopForm.get('laptopImg')?.touched &&
                       laptopForm.get('laptopImg')?.hasError('invalidInput')
                     " class="error-message">
-                    Laptop image link must be in the format: .jpg, .jpeg, .tiff, .png, .webp, .bmp
+                    {{ 'Laptop image link must be in the format: .jpg, .jpeg, .tiff, .png, .webp, .bmp' | translate }}
                 </div>
             </div>
             <div formArrayName="warranty">
                 <ng-container *ngFor="let warranty of Warranties.controls; let index = index">
                     <hr>
                     <div [formGroupName]="index" class="form-field">
-                        <p class="form-label">Warranty-{{index+1}}</p>
+                        <p class="form-label">{{ 'Warranty' | translate }}-{{index+1}}</p>
                         <div>
-                            <label for="type" class="form-label">Warranty type:</label>
+                            <label for="type" class="form-label">{{ 'Warranty Type' | translate }}:</label>
                             <input type="text" id="type" formControlName="type" class="form-input"
                                 [ngClass]="{ 'invalid-input': laptopForm.get('warranty.' + index + '.type')?.invalid && laptopForm.get('warranty.' + index + '.type')?.touched }"
                                 required>
                             <div *ngIf="laptopForm.get('warranty.' + index + '.type')?.invalid && laptopForm.get('warranty.' + index + '.type')?.touched"
                                 class="error-message">
-                                Warranty type is required
+                                {{ 'Warranty type is required' | translate }}
                             </div>
                         </div>
                         <div>
-                            <label for="duration" class="form-label">Warranty duration:</label>
+                            <label for="duration" class="form-label">{{ 'Warranty Duration' | translate }}:</label>
                             <input type="text" id="duration" formControlName="duration" class="form-input"
                                 [ngClass]="{ 'invalid-input': laptopForm.get('warranty.' + index + '.duration')?.invalid && laptopForm.get('warranty.' + index + '.duration')?.touched }"
                                 required>
                             <div *ngIf="laptopForm.get('warranty.' + index + '.duration')?.invalid && laptopForm.get('warranty.' + index + '.duration')?.touched"
                                 class="error-message">
-                                Warranty duration is required
+                                {{ 'Warranty duration is required' | translate }}
                             </div>
                         </div>
                         <div class="flex justify-end">
-                            <button (click)="removeWarranty(index)" [disabled]="Warranties.controls.length === 1" class="warranty-btn hover">Remove Warranty</button>
-                            <button (click)="addNewWarranty()" class="warranty-btn hover">Add New Warranty</button>
+                            <button (click)="removeWarranty(index)" [disabled]="Warranties.controls.length === 1" class="warranty-btn hover">{{ 'Remove Warranty' | translate }}</button>
+                            <button (click)="addNewWarranty()" class="warranty-btn hover">{{ 'Add New Warranty' | translate }}</button>
                         </div>
                     </div>
                 </ng-container>

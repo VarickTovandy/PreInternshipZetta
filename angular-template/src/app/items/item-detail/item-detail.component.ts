@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LaptopSpec } from '../../shared/interface/laptop-spec';
 import { LaptopDataService } from '../../shared/service/laptop-data.service';
 
+
 @Component({
   selector: 'app-item-detail',
   templateUrl: './item-detail.component.html',

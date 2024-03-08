@@ -1,23 +1,25 @@
+<app-nav-bar></app-nav-bar>
+
 <div class="container">
     <div class="header flex">
-        <button class="button hover" (click)="backToHome()">Back</button>
+        <button class="button hover" (click)="backToHome()">{{'Back' | translate}}</button>
         <h1>{{laptopData.name}}</h1>
-        <button (click)="openEditLaptop()" class="button hover">Edit Laptop Data</button>
+        <button (click)="openEditLaptop()" class="button hover">{{'Edit Laptop Data' | translate}}</button>
     </div>
     <div class="detail-container">
         <img [src]="laptopData.laptopImg" alt="{{ laptopData.name }}">
         <div>
-            <p>Brand: {{ laptopData.brand }}</p>
-            <p>Processor: {{ laptopData.processor }}</p>
-            <p>GPU: {{ laptopData.gpu }}</p>
-            <p>Storage: {{ laptopData.storage }}</p>
-            <p>RAM: {{ laptopData.ram }}</p>
-            <p>Price: ${{ laptopData.price }}</p>
+            <p>{{'Brand' | translate}}: {{ laptopData.brand }}</p>
+            <p>{{'Processor' | translate}}: {{ laptopData.processor }}</p>
+            <p>{{'GPU' | translate}}: {{ laptopData.gpu }}</p>
+            <p>{{'Storage' | translate}}: {{ laptopData.storage }}</p>
+            <p>{{'RAM' | translate}}: {{ laptopData.ram }}</p>
+            <p>{{'Price' | translate}}: ${{ laptopData.price }}</p>
             <div *ngFor="let warranty of laptopData.warranty; let i = index">
                 <hr>
-                <p>Warranty-{{ i + 1 }}</p>
-                <p>Warranty Type: {{ warranty.type }}</p>
-                <p>Warranty Duration: {{ warranty.duration }}</p>
+                <p>{{'Warranty' | translate}}-{{ i + 1 }}</p>
+                <p>{{'Warranty Type' | translate}}: {{ warranty.type }}</p>
+                <p>{{'Warranty Duration' | translate}}: {{ warranty.duration }}</p>
             </div>            
         </div>
     </div>
