@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="flex gap">
+        <button class="button" (click)="backToHome()"><fa-icon [icon]="faArrow"></fa-icon> {{ 'Back' | translate
+            }}</button>
+        <h1 *ngIf="userId === 0">{{ 'Add User Form' | translate }}</h1>
+        <h1 *ngIf="userId !== 0">{{ 'Edit User Form' | translate }}</h1>
+    </div>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <h2 class="big-margin-top">{{ 'Personal Information' | translate }}</h2>
+        <div>
+            <label for="name">{{ 'Name' | translate }}:</label>
+            <input type="text" class="form-input" id="name" formControlName="name">
+        </div>
+        <div>
+            <label for="username">{{ 'Username' | translate }}:</label>
+            <input type="text" class="form-input" id="username" formControlName="username">
+        </div>
+        <div>
+            <label for="email">{{ 'Email' | translate }}:</label>
+            <input type="email" class="form-input" id="email" formControlName="email">
+        </div>
+        <div>
+            <label for="phone">{{ 'Phone' | translate }}:</label>
+            <input type="text" class="form-input" id="phone" formControlName="phone">
+        </div>
+        <div>
+            <label for="website">{{ 'Website' | translate }}:</label>
+            <input type="text" class="form-input" id="website" formControlName="website">
+        </div>
+        <h2 class="margin-top">{{ 'Address Information' | translate }}</h2>
+        <div formGroupName="address">
+            <div>
+                <label for="street">{{ 'Street' | translate }}:</label>
+                <input type="text" class="form-input" id="street" formControlName="street">
+            </div>
+            <div>
+                <label for="suite">{{ 'Suite' | translate }}:</label>
+                <input type="text" class="form-input" id="suite" formControlName="suite">
+            </div>
+            <div>
+                <label for="city">{{ 'City' | translate }}:</label>
+                <input type="text" class="form-input" id="city" formControlName="city">
+            </div>
+            <div>
+                <label for="zipcode">{{ 'Zipcode' | translate }}:</label>
+                <input type="text" class="form-input" id="zipcode" formControlName="zipcode">
+            </div>
+            <div formGroupName="geo">
+                <div>
+                    <label for="lat">{{ 'Latitude' | translate }}:</label>
+                    <input type="text" class="form-input" id="lat" formControlName="lat">
+                </div>
+                <div>
+                    <label for="lng">{{ 'Longitude' | translate }}:</label>
+                    <input type="text" class="form-input" id="lng" formControlName="lng">
+                </div>
+            </div>
+        </div>
+        <h2 class="margin-top">{{ 'Company Information' | translate }}</h2>
+        <div formGroupName="company">
+            <div>
+                <label for="companyName">{{ 'Company Name' | translate }}:</label>
+                <input type="text" class="form-input" id="companyName" formControlName="name">
+            </div>
+            <div>
+                <label for="catchPhrase">{{ 'Catch Phrase' | translate }}:</label>
+                <input type="text" class="form-input" id="catchPhrase" formControlName="catchPhrase">
+            </div>
+            <div>
+                <label for="bs">{{ 'Business Strategy' | translate }}:</label>
+                <input type="text" class="form-input" id="bs" formControlName="bs">
+            </div>
+        </div>
+
+        <button type="submit" class="button big-margin-top form-btn">{{ 'Submit' | translate }}</button>
+    </form>
+</div>

@@ -1,0 +1,12 @@
+<div class="card-container" (click)="navigateToDetail()">
+    <div class="card-header">
+        <fa-icon [icon]="faUser" class="user-icon"></fa-icon>
+    </div>
+    <div class="card-body">
+        <p>{{userData.username}}</p>
+        <p>{{userData.email}}</p>
+    </div>
+</div>
+
+<!-- <h1 (click)="navigateToDetail()">{{userData.name}}</h1>
+<button (click)="triggerDeleteUser()">Remove User</button> -->

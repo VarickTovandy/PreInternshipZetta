@@ -1,0 +1,42 @@
+<div class="container flex justify-between">
+    <div class="flex gap">
+        <button class="button" (click)="backToHome()"><fa-icon [icon]="faArrow"></fa-icon> {{ 'Back' | translate
+            }}</button>
+        <h1>{{userData.name}}</h1>
+    </div>
+    <div class="flex gap">
+        <button (click)="triggerDeleteUser()" class="button">Remove User</button>
+        <button (click)="navigateToEdit()" class="button">{{ 'Edit User' | translate }}</button>
+    </div>
+</div>
+
+<div class="bottom-container flex gap">
+    <div class="image-container">
+        <fa-icon [icon]="faUSer" class="big-icon"></fa-icon>
+    </div>
+    <div class="connector"></div>
+    <div class="user-information">
+        <h1>{{'Personal Information' | translate}}</h1>
+        <p>{{'Name' | translate}}<span>: {{userData.name}}</span></p>
+        <p>{{ 'Username' | translate }}<span>: {{ userData.username }}</span></p>
+        <p>{{ 'Email' | translate }}<span>: {{ userData.email }}</span></p>
+        <p>{{ 'Phone' | translate }}<span>: {{ userData.phone }}</span></p>
+        <p>{{ 'Website' | translate }}<span>: {{ userData.website }}</span></p>
+    </div>
+    <div class="address-information">
+        <h1>{{ 'Address Information' | translate }}</h1>
+        <p>{{ 'Street' | translate }}<span>: {{ userData.address.street }}</span></p>
+        <p>{{ 'Suite' | translate }}<span>: {{ userData.address.suite }}</span></p>
+        <p>{{ 'City' | translate }}<span>: {{ userData.address.city }}</span></p>
+        <p>{{ 'Zipcode' | translate }}<span>: {{ userData.address.zipcode }}</span></p>
+        <p>{{ 'Geocode' | translate }}:</p>
+        <p>{{ 'Latitude' | translate }}<span>: {{ userData.address.geo.lat }}</span></p>
+        <p>{{ 'Longitude' | translate }}<span>: {{ userData.address.geo.lng }}</span></p>
+    </div>
+    <div class="company-information">
+        <h1>{{ 'Company Information' | translate }}</h1>
+        <p>{{ 'Company Name' | translate }}<span>: {{ userData.company.name }}</span></p>
+        <p>{{ 'Company Cathcphrase' | translate }}<span>: {{ userData.company.catchPhrase }}</span></p>
+        <p>{{ 'Company Business Strategy' | translate }}<span>: {{ userData.company.bs }}</span></p>
+    </div>
+</div>

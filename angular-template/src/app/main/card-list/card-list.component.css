@@ -1,0 +1,32 @@
+.select-lang {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: #fff;
+    outline: none;
+    border: none;
+}
+
+.select-lang::after {
+    content: "\25BC";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.select-lang option {
+    background-color: #fff;
+    color: #333;
+}
+
+.select-lang option:hover {
+    background-color: #f0f0f0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
