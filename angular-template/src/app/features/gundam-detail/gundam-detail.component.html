@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="flex align-center gap   ">
+        <h1>Gundam Detail</h1>
+        <button (click)="goToEditGundam()" class="button">Open Edit Gundam</button>
+        <button (click)="deleteGundam(gundamId)" class="button">Delete Gundam</button>
+    </div>
+    <mat-tab-group>
+        <mat-tab label="Image & Description">
+            <div class="gundam-details">
+                <div class="image-container">
+                    <img [src]="gundamData.imageUrl" alt="{{ gundamData.name }}" class="gundam-image">
+                </div>
+                <p>{{ gundamData.description }}</p>
+            </div>
+        </mat-tab>
+        <mat-tab label="Additional Info">
+            <div class="additional-info">
+                <p><strong>Name:</strong> {{ gundamData.name }}</p>
+                <p><strong>Model Number:</strong> {{ gundamData.modelNumber }}</p>
+                <p><strong>Series:</strong> {{ gundamData.series }}</p>
+                <!-- <p><strong>Armaments:</strong></p>
+                <div *ngFor="let armament of gundamData.armaments">
+                    <p><strong>Fixed:</strong> {{ armament.fixed }}</p>
+                    <p><strong>Handheld:</strong> {{ armament.handheld }}</p>
+                </div> -->
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

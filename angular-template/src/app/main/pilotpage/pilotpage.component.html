@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="pilot-list">
+        <div class="card-container" *ngFor="let pilot of pilotsData" (click)="goToPilotDetail(pilot.id)">
+            <img [src]="pilot.imageUrl" alt="{{pilot.name}}">
+            <div class="pilot-details">
+                <h3 class="pilot-name">{{pilot.name}}</h3>
+                <p class="pilot-gundam">Gundam: {{pilot.gundamName}}</p>
+            </div>
+        </div>
+    </div>
+</div>

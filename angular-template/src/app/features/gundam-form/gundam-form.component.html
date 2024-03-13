@@ -1,0 +1,47 @@
+<div class="container">
+    <h1>Add New Gundam</h1>
+    <form [formGroup]="gundamForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="form-group">
+            <mat-label>Name:</mat-label>
+            <input matInput type="text" formControlName="name">
+        </mat-form-field>
+        <mat-form-field class="form-group">
+            <mat-label>Model Number:</mat-label>
+            <input matInput type="text" formControlName="modelNumber">
+        </mat-form-field>
+        <mat-form-field class="form-group">
+            <mat-label>Series:</mat-label>
+            <input matInput type="text" formControlName="series">
+        </mat-form-field>
+        <mat-form-field class="form-group">
+            <mat-label>Description:</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+        <mat-form-field class="form-group">
+            <mat-label>Image URL:</mat-label>
+            <input matInput type="text" formControlName="imageUrl">
+        </mat-form-field>
+        <div formArrayName="armaments">
+            <ng-container *ngFor="let armament of Armaments.controls; let i = index">
+                <div [formGroupName]="i" class="armament-group">
+                    <mat-form-field class="form-group">
+                        <mat-label>Fixed Armaments:</mat-label>
+                        <input matInput type="text" formControlName="fixed">
+                    </mat-form-field>
+                    <mat-form-field class="form-group">
+                        <mat-label>Handheld Armaments:</mat-label>
+                        <input matInput type="text" formControlName="handheld">
+                    </mat-form-field>
+                    <button mat-icon-button color="warn" (click)="removeArmaments(i)"
+                        [disabled]="Armaments.controls.length <= 1">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </ng-container>
+        </div>
+        <div class="flex gap">
+            <button mat-raised-button color="primary" type="button" (click)="addArmaments()">Add Armament</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="!gundamForm.valid">Submit</button>
+        </div>
+    </form>
+</div>

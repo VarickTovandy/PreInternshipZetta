@@ -1,0 +1,20 @@
+<div class="container">
+    <mat-tab-group>
+        <!-- Tab for images -->
+        <mat-tab label="Images">
+            <div class="image-container">
+                <img [src]="pilotData.imageUrl" alt="{{ pilotData.name }}" class="pilot-image">
+            </div>
+        </mat-tab>
+
+        <!-- Tab for pilot information -->
+        <mat-tab label="Pilot Information">
+            <div class="pilot-info">
+                <p><strong>Name:</strong> {{ pilotData.name }}</p>
+                <p><strong>Nationality:</strong> {{ pilotData.nationality }}</p>
+                <p><strong>Gundam Name:</strong> {{ pilotData.gundamName }}</p>
+                <!-- Add more pilot information as needed -->
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

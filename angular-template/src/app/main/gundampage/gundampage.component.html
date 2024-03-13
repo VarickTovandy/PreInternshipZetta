@@ -1,0 +1,14 @@
+<div class="container">
+    <button class="add-button" (click)="navigateToAddGundam()">Add Gundam</button>
+    <div class="gundam-list">
+        <mat-card *ngFor="let gundam of gundamsData" (click)="goToGundamDetail(gundam.id)">
+            <img mat-card-image [src]="gundam.imageUrl" alt="{{ gundam.name }}">
+            <mat-card-content>
+                <div class="gundam-details">
+                    <h3 class="gundam-name">{{ gundam.name }}</h3>
+                    <p class="gundam-model">Model: {{ gundam.modelNumber }}</p>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

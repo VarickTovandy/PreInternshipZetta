@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+:root {
+    --primary-color: #041b64;
+    --secondary-color: #7d9dd6;
+    --accent-color: #d59013;
+    --background-color: #d5dde9;
+}
+
+* {
+    font-family: 'Orbitron' !important;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+.sidenav-container {
+    height: 100vh;
+}
+
+.mat-typography h1 {
+    margin: 0!important;
+}
+
+.flex {
+    display: flex;
+}
+
+.m-left {
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.gap {
+    gap: 30px;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.button {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.container {
+    padding: 30px 50px;
+}

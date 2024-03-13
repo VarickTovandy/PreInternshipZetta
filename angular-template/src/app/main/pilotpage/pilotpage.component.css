@@ -1,0 +1,42 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.card-container img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+.pilot-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+  }
+
+.pilot-details {
+    text-align: center;
+}
+
+.pilot-name {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.pilot-gundam {
+    font-size: 14px;
+    color: #666;
+}

@@ -1,0 +1,9 @@
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.gundam-image {
+    max-width: 100%;
+    max-height: 800px;
+}

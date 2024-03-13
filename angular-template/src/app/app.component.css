@@ -1,0 +1,26 @@
+.sidenav-container {
+    height: 100vh;
+}
+
+.header {
+    color: #fff;
+    padding: 16px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.main-title {
+    margin-left: 16px;
+}
+
+.main-content {
+    padding: 16px;
+}
+
+::ng-deep .mat-sidenav {
+    background-color: var(--secondary-color) !important;
+    width: 15vw;
+}
