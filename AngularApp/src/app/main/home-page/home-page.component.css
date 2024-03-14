@@ -1,0 +1,26 @@
+::ng-deep td.mat-cell {
+    padding: 0 20px !important;
+}
+
+::ng-deep .mat-sort-header {
+    padding: 0 20px !important;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.mat-card {
+    padding: 25px;
+}
+
+::ng-deep .mat-paginator-container {
+    margin-top: 25px;
+}
+
+.form-container {
+    width: 100%;
+}

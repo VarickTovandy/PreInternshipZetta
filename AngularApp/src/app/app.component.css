@@ -1,0 +1,22 @@
+::ng-deep .mat-sidenav {
+    background-color: #53667b;
+    width: 15vw;
+    padding: 20px 10px;
+    min-height: 100vh;
+}
+
+::ng-deep .mat-list-item-content {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.sidenav-container {
+    height: 100vh;
+}
+
+.mat-icon-button {
+    font-size: 32px;
+}

@@ -1,0 +1,22 @@
+<div class="container">
+    <mat-card class="user-card">
+        <div class="user-header">
+            <img src="" alt="">
+            <div class="flex justify-between align-center">
+                <h1>{{ selectedMentor.civility }} {{ selectedMentor.last_name }} {{ selectedMentor.first_name }}</h1>
+                <button mat-button color="primary" (click)="goToEditMentor()">Update</button>
+            </div>
+        </div>
+        <div class="user-body">
+            <h1>Employee Information</h1>
+            <p>Email: {{ selectedMentor.email }}</p>
+            <p>User status: {{ selectedMentor.user_status }}</p>
+            <p>Document count: {{ selectedMentor.count_document }}</p>
+            <div class="company-information">
+                <h2>Company Information</h2>
+                <p>Company name: {{ selectedMentor.company.name }}</p>
+                <p>Company user type: {{ selectedMentor.company.user_type }}</p>
+            </div>
+        </div>
+    </mat-card>
+</div>

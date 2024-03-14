@@ -1,0 +1,22 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.small-gap {
+    gap: 5px;
+}
+
+.container {
+    padding: 20px 40px;
+}

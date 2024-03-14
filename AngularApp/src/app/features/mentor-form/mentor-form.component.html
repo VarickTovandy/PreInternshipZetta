@@ -1,0 +1,81 @@
+<div class="container">
+    <mat-card class="mat-card">
+        <h1>{{ mentorId ? 'Edit Mentor' : 'Add Mentor' }}</h1>
+        <form [formGroup]="mentorForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" placeholder="Email">
+                <mat-error *ngIf="mentorForm.get('email').invalid && mentorForm.get('email').touched">
+                    Email is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Civility</mat-label>
+                <mat-select formControlName="civility" placeholder="Civility">
+                    <mat-option value="MR">Mr.</mat-option>
+                    <mat-option value="MRS">Mrs.</mat-option>
+                </mat-select>
+                <mat-error *ngIf="mentorForm.get('civility').invalid && mentorForm.get('civility').touched">
+                    Civility is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="first_name" placeholder="First Name">
+                <mat-error *ngIf="mentorForm.get('first_name').invalid && mentorForm.get('first_name').touched">
+                    First Name is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="last_name" placeholder="Last Name">
+                <mat-error *ngIf="mentorForm.get('last_name').invalid && mentorForm.get('last_name').touched">
+                    Last Name is required
+                </mat-error>
+            </mat-form-field>
+
+            <div formGroupName="company">
+                <mat-form-field appearance="fill">
+                    <mat-label>Company Name</mat-label>
+                    <input matInput formControlName="name" placeholder="Company Name">
+                    <mat-error *ngIf="mentorForm.get('company.name').invalid && mentorForm.get('company.name').touched">
+                        Company Name is required
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>User Type</mat-label>
+                    <input matInput formControlName="user_type" placeholder="User Type">
+                    <mat-error
+                        *ngIf="mentorForm.get('company.user_type').invalid && mentorForm.get('company.user_type').touched">
+                        User Type is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <mat-form-field appearance="fill">
+                <mat-label>User Status</mat-label>
+                <mat-select formControlName="user_status" placeholder="User Status">
+                    <mat-option value="active">Active</mat-option>
+                    <mat-option value="pending">Pending</mat-option>
+                </mat-select>
+                <mat-error *ngIf="mentorForm.get('user_status').invalid && mentorForm.get('user_status').touched">
+                    User Status is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Document Count</mat-label>
+                <input matInput formControlName="count_document" placeholder="Document Count">
+                <mat-error *ngIf="mentorForm.get('count_document').invalid && mentorForm.get('count_document').touched">
+                    Document Count is required
+                </mat-error>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit">Submit</button>
+        </form>
+    </mat-card>
+</div>
