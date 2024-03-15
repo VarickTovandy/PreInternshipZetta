@@ -1,0 +1,81 @@
+<div class="flex justify-between">
+    <h1>Add Form</h1>
+    <select (change)="switchLang($event)" class="select-lang">
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+    </select>
+</div>
+
+<form [formGroup]="playerForm" (ngSubmit)="onSubmit()">
+    <mat-radio-group formControlName="civility">
+        <mat-radio-button value="MR">{{ 'CIVILITY_MR' | translate }}</mat-radio-button>
+        <mat-radio-button value="MRS">{{ 'CIVILITY_MRS' | translate }}</mat-radio-button>
+    </mat-radio-group>
+    <mat-error *ngIf="playerForm.get('civility').invalid && playerForm.get('civility').touched">
+        {{ 'CIVILITY_REQUIRED' | translate }}
+    </mat-error>
+
+    <mat-form-field appearance="fill">
+        <mat-label>{{ 'FIRST_NAME' | translate }}</mat-label>
+        <input matInput formControlName="firstName" placeholder="{{ 'FIRST_NAME' | translate }}">
+        <mat-error *ngIf="playerForm.get('firstName').invalid && playerForm.get('firstName').touched">
+            {{ 'FIRST_NAME_REQUIRED' | translate }}
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>{{ 'LAST_NAME' | translate }}</mat-label>
+        <input matInput formControlName="lastName" placeholder="{{ 'LAST_NAME' | translate }}">
+        <mat-error *ngIf="playerForm.get('lastName').invalid && playerForm.get('lastName').touched">
+            {{ 'LAST_NAME_REQUIRED' | translate }}
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>{{ 'BIRTH_DATE' | translate }}</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="birthDate"
+            placeholder="{{ 'BIRTH_DATE' | translate }}">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="playerForm.get('birthDate').invalid && playerForm.get('birthDate').touched">
+            {{ 'BIRTH_DATE_REQUIRED' | translate }}
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>{{ 'GENDER' | translate }}</mat-label>
+        <mat-select formControlName="gender" placeholder="{{ 'GENDER' | translate }}">
+            <mat-option value="Male">{{ 'GENDER_MALE' | translate }}</mat-option>
+            <mat-option value="Female">{{ 'GENDER_FEMALE' | translate }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="playerForm.get('gender').invalid && playerForm.get('gender').touched">
+            {{ 'GENDER_REQUIRED' | translate }}
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>{{ 'POSITION' | translate }}</mat-label>
+        <input matInput formControlName="position" placeholder="{{ 'POSITION' | translate }}">
+        <mat-error *ngIf="playerForm.get('position').invalid && playerForm.get('position').touched">
+            {{ 'POSITION_REQUIRED' | translate }}
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>{{ 'TEAM' | translate }}</mat-label>
+        <input matInput formControlName="team" placeholder="{{ 'TEAM' | translate }}">
+        <mat-error *ngIf="playerForm.get('team').invalid && playerForm.get('team').touched">
+            {{ 'TEAM_REQUIRED' | translate }}
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>{{ 'PLAYER_IMAGE' | translate }}</mat-label>
+        <input matInput formControlName="playerImg" placeholder="{{ 'PLAYER_IMAGE' | translate }}">
+        <mat-error *ngIf="playerForm.get('playerImg').invalid && playerForm.get('playerImg').touched">
+            {{ 'PLAYER_IMAGE_REQUIRED' | translate }}
+        </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">{{ 'SUBMIT' | translate }}</button>
+</form>

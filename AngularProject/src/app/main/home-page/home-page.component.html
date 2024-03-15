@@ -1,0 +1,56 @@
+<div class="container">
+    <div mat-card class="mat-card">
+        <div class="form-container">
+            <div class="btn-container">
+                <button mat-raised-button color="primary" (click)="openAddPlayer()">Add Player</button>
+            </div>
+            <div class="">
+                <table mat-table [dataSource]="dataSource">
+                    <ng-container matColumnDef="no">
+                        <th mat-header-cell *matHeaderCellDef>No</th>
+                        <td mat-cell *matCellDef="let player">{{ player._id }}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef>Name</th>
+                        <td mat-cell *matCellDef="let player">{{ player.firstName }} {{ player.lastName }}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="gender">
+                        <th mat-header-cell *matHeaderCellDef>Gender</th>
+                        <td mat-cell *matCellDef="let player">{{ player.gender }}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="position">
+                        <th mat-header-cell *matHeaderCellDef>Position</th>
+                        <td mat-cell *matCellDef="let player">{{ player.position }}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="team">
+                        <th mat-header-cell *matHeaderCellDef>Team</th>
+                        <td mat-cell *matCellDef="let player">{{ player.team }}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="action">
+                        <th mat-header-cell *matHeaderCellDef>Action</th>
+                        <td mat-cell *matCellDef="let player">
+                            <button mat-icon-button color="primary" (click)="navigateToPlayerDetail(player._id)">
+                                <mat-icon>visibility</mat-icon>
+                            </button>
+                            <button mat-icon-button color="primary" (click)="removePlayer(player._id)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+
+                <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons
+                    aria-label="Select page of periodic mentors">
+                </mat-paginator>
+            </div>
+        </div>
+    </div>
+</div>

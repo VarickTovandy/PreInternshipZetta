@@ -1,0 +1,22 @@
+{
+    "CIVILITY": "Civilité",
+    "FIRST_NAME": "Prénom",
+    "LAST_NAME": "Nom de famille",
+    "BIRTH_DATE": "Date de naissance",
+    "GENDER": "Genre",
+    "CIVILITY_MR": "Monsieur",
+    "CIVILITY_MRS": "Madame",
+    "POSITION": "Poste",
+    "TEAM": "Équipe",
+    "PLAYER_IMAGE": "Image du joueur",
+    "SUBMIT": "Soumettre",
+    "CIVILITY_REQUIRED": "La civilité est requise",
+    "FIRST_NAME_REQUIRED": "Le prénom est requis",
+    "LAST_NAME_REQUIRED": "Le nom de famille est requis",
+    "BIRTH_DATE_REQUIRED": "La date de naissance est requise",
+    "GENDER_REQUIRED": "Le genre est requis",
+    "POSITION_REQUIRED": "Le poste est requis",
+    "TEAM_REQUIRED": "L'équipe est requise",
+    "PLAYER_IMAGE_REQUIRED": "L'image du joueur est requise"
+  }
+  

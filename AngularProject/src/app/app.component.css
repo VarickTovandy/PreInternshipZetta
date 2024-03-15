@@ -1,0 +1,29 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.mat-sidenav {
+  width: 200px;
+  background-color: #333;
+  /* Warna latar belakang sidenav */
+  color: #fff;
+  /* Warna teks pada sidenav */
+}
+
+.mat-nav-list a {
+  color: #fff;
+  /* Warna teks pada tautan navigasi */
+}
+
+.main-content {
+  padding: 20px;
+  /* Padding untuk konten utama */
+}
+
+.home-icon {
+  margin-right: 20px;
+}
+
+.header-text {
+  font-size: 22px;
+}

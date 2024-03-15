@@ -1,0 +1,60 @@
+/* CSS untuk tata letak formulir */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Spasi antara baris formulir */
+}
+
+.form-field {
+    flex: 1; /* Mengisi sebanyak mungkin ruang di dalam baris */
+    margin-right: 10px; /* Spasi antara field */
+}
+
+/* Style untuk select language */
+.select-lang {
+    margin-bottom: 20px; /* Spasi di bawah select */
+}
+
+/* CSS untuk merubah gaya radio button */
+.mat-radio-button {
+    margin-right: 10px; /* Spasi antara radio button */
+}
+
+/* CSS untuk merubah gaya tombol submit */
+button[type="submit"] {
+    width: 100%;
+    margin-top: 20px; /* Spasi di atas tombol submit */
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+/* Style untuk select */
+.select-lang {
+    font-size: 16px; /* Ukuran font */
+    padding: 8px 12px; /* Padding di dalam select */
+    border: 1px solid #ccc; /* Garis tepi */
+    border-radius: 4px; /* Sudut lengkung */
+    background-color: #fff; /* Warna latar belakang */
+    color: #333; /* Warna teks */
+    cursor: pointer; /* Kursor pointer */
+    outline: none; /* Hilangkan border focus saat di-klik */
+    transition: border-color 0.3s ease; /* Animasi perubahan warna border */
+}
+
+/* Style untuk hover select */
+.select-lang:hover {
+    border-color: #666; /* Warna border saat hover */
+}
+
+/* Style untuk saat select di-focus */
+.select-lang:focus {
+    border-color: #00a0e9; /* Warna border saat di-focus */
+    box-shadow: 0 0 0 2px rgba(0, 160, 233, 0.2); /* Shadow saat di-focus */
+}

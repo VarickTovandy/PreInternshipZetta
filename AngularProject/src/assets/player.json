@@ -1,0 +1,112 @@
+[
+  {
+    "_id": "1",
+    "civility": "Monsieur",
+    "firstName": "Kylian",
+    "lastName": "Mbappé",
+    "gender": "Male",
+    "position": "Forward",
+    "team": "Paris Saint-Germain",
+    "playerImg": "https://img.a.transfermarkt.technology/portrait/big/342229-1682683695.jpg?lm=1",
+    "birthDate": "1985-05-10"
+  },
+  {
+    "_id": "2",
+    "civility": "MRS",
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "gender": "Female",
+    "position": "Goalkeeper",
+    "team": "Team B",
+    "playerImg": "jane_smith.jpg",
+    "birthDate": "1990-02-15"
+  },
+  {
+    "_id": "3",
+    "civility": "Mr.",
+    "firstName": "Michael",
+    "lastName": "Johnson",
+    "gender": "Male",
+    "position": "Midfielder",
+    "team": "Team A",
+    "playerImg": "michael_johnson.jpg",
+    "birthDate": "1988-11-20"
+  },
+  {
+    "_id": "4",
+    "civility": "Mr.",
+    "firstName": "David",
+    "lastName": "Williams",
+    "gender": "Male",
+    "position": "Defender",
+    "team": "Team C",
+    "playerImg": "david_williams.jpg",
+    "birthDate": "1987-07-03"
+  },
+  {
+    "_id": "5",
+    "civility": "Ms.",
+    "firstName": "Emily",
+    "lastName": "Brown",
+    "gender": "Female",
+    "position": "Midfielder",
+    "team": "Team B",
+    "playerImg": "emily_brown.jpg",
+    "birthDate": "1992-04-25"
+  },
+  {
+    "_id": "6",
+    "civility": "Mr.",
+    "firstName": "Matthew",
+    "lastName": "Martinez",
+    "gender": "Male",
+    "position": "Forward",
+    "team": "Team A",
+    "playerImg": "matthew_martinez.jpg",
+    "birthDate": "1989-09-12"
+  },
+  {
+    "_id": "7",
+    "civility": "Ms.",
+    "firstName": "Sophia",
+    "lastName": "Garcia",
+    "gender": "Female",
+    "position": "Defender",
+    "team": "Team B",
+    "playerImg": "sophia_garcia.jpg",
+    "birthDate": "1995-12-30"
+  },
+  {
+    "_id": "8",
+    "civility": "Mr.",
+    "firstName": "Daniel",
+    "lastName": "Rodriguez",
+    "gender": "Male",
+    "position": "Goalkeeper",
+    "team": "Team C",
+    "playerImg": "daniel_rodriguez.jpg",
+    "birthDate": "1991-10-18"
+  },
+  {
+    "_id": "9",
+    "civility": "Ms.",
+    "firstName": "Olivia",
+    "lastName": "Lopez",
+    "gender": "Female",
+    "position": "Forward",
+    "team": "Team A",
+    "playerImg": "olivia_lopez.jpg",
+    "birthDate": "1986-06-08"
+  },
+  {
+    "_id": "10",
+    "civility": "Mr.",
+    "firstName": "Alexander",
+    "lastName": "Perez",
+    "gender": "Male",
+    "position": "Midfielder",
+    "team": "Team B",
+    "playerImg": "alexander_perez.jpg",
+    "birthDate": "1993-03-17"
+  }
+]
